@@ -4,6 +4,7 @@ import Signup from "./pages/signup/signup.jsx";
 import { createTheme, ThemeProvider } from "@mui/material";
 
 import "@fontsource/poppins";
+import Leaderboard from "./pages/leaderboard/leaderboard.jsx";
 
 const theme = createTheme({
 	typography: {
@@ -14,7 +15,7 @@ const theme = createTheme({
 const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
-			<Signup />
+			<Leaderboard />
 		</ThemeProvider>
 	);
 };
