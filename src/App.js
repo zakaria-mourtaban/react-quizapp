@@ -16,10 +16,12 @@ const theme = createTheme({
 
 const sampleQuestions = [
 	{
+		type: "options",
 		question: "What is the capital of France?ddddddddddddd",
 		options: ["Berlin", "Madrid", "Paris", "Rome"],
 	},
 	{
+		type: "word",
 		question:
 			"What is 2 + 2?ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
 		options: ["3", "4", "5", "6"],

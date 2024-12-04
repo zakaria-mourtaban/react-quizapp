@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import { Container, Typography, Button, Box, Paper } from "@mui/material";
+import {
+	Container,
+	Typography,
+	Button,
+	Box,
+	Paper,
+	TextField,
+} from "@mui/material";
 
 const Quiz = ({ questions }) => {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [selectedOption, setSelectedOption] = useState(null);
-
+	const [userinput, setUserInput] = useState("");
 	const handleOptionClick = (option) => {
 		setSelectedOption(option);
 	};
@@ -13,6 +20,7 @@ const Quiz = ({ questions }) => {
 		if (currentQuestion < questions.length - 1) {
 			setCurrentQuestion(currentQuestion + 1);
 			setSelectedOption(null);
+			setUserInput("");
 		} else {
 			alert("You've completed the quiz!");
 		}
@@ -41,11 +49,16 @@ const Quiz = ({ questions }) => {
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "space-between",
+					alignItems: "center",
 				}}
 			>
 				<Typography
 					variant="h5"
-					sx={{ marginBottom: "20px", fontWeight: "bold", wordWrap: "break-word" }}
+					sx={{
+						marginBottom: "20px",
+						fontWeight: "bold",
+						wordWrap: "break-word",
+					}}
 				>
 					Question {currentQuestion + 1} of {questions.length}
 				</Typography>
@@ -55,29 +68,52 @@ const Quiz = ({ questions }) => {
 				>
 					{questions[currentQuestion].question}
 				</Typography>
-				<Box>
-					{questions[currentQuestion].options.map((option, index) => (
-						<Button
-							key={index}
-							variant={selectedOption === option ? "contained" : "outlined"}
-							sx={{
-								margin: "10px",
-								padding: "10px 20px",
-								fontSize: "16px",
-								textTransform: "none",
-								backgroundColor: selectedOption === option ? "primary.main" : "#ffffff",
-								color: selectedOption === option ? "#ffffff" : "primary.main",
-								":hover": {
-									backgroundColor: "primary.light",
-								},
-								wordWrap: "break-word",
-							}}
-							onClick={() => handleOptionClick(option)}
-						>
-							{option}
-						</Button>
-					))}
-				</Box>
+				{questions[currentQuestion].type === "options" ? (
+					<Box>
+						{questions[currentQuestion].options.map(
+							(option, index) => (
+								<Button
+									key={index}
+									variant={
+										selectedOption === option
+											? "contained"
+											: "outlined"
+									}
+									sx={{
+										margin: "10px",
+										padding: "10px 20px",
+										fontSize: "16px",
+										textTransform: "none",
+										backgroundColor:
+											selectedOption === option
+												? "primary.main"
+												: "#ffffff",
+										color:
+											selectedOption === option
+												? "#ffffff"
+												: "primary.main",
+										":hover": {
+											backgroundColor: "primary.light",
+										},
+										wordWrap: "break-word",
+									}}
+									onClick={() => handleOptionClick(option)}
+								>
+									{option}
+								</Button>
+							)
+						)}
+					</Box>
+				) : (
+					<TextField
+						label="Answer"
+						variant="outlined"
+						fullWidth
+						value={userinput}
+						onChange={(e) => setUserInput(e.target.value)}
+						sx={{ width: "20%" }}
+					/>
+				)}
 				<Button
 					variant="contained"
 					color="primary"
