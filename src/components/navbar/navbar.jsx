@@ -1,14 +1,33 @@
 import React from "react";
-import { Link } from "@mui/material";
+import { Button } from "@mui/material";
+import "./navbar.css"
 
 const Navbar = () => {
 	return (
-		<div>
-			<Link></Link>
-			<Link></Link>
-			<Link></Link>
+		<div className="navbar">
+			<Button
+				variant="text"
+				size="large"
+				sx={{ fontSize: "20px", fontWeight: "bold" }}
+			>
+				Quiz
+			</Button>
+			<Button
+				variant="text"
+				size="large"
+				sx={{ fontSize: "20px", fontWeight: "bold" }}
+			>
+				LeaderBoard
+			</Button>
+			<Button
+				variant="text"
+				size="large"
+				sx={{ fontSize: "20px", fontWeight: "bold" }}
+			>
+				Profile
+			</Button>
 		</div>
-	)
-}
+	);
+};
 
 export default Navbar;

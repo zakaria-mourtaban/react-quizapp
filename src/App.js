@@ -1,10 +1,11 @@
 import React from "react";
 import Login from "./pages/login/login.jsx";
 import Signup from "./pages/signup/signup.jsx";
-import { createTheme, ThemeProvider } from "@mui/material";
-
-import "@fontsource/poppins";
+import Navbar from "./components/navbar/navbar.jsx";
 import Leaderboard from "./pages/leaderboard/leaderboard.jsx";
+import { createTheme, ThemeProvider } from "@mui/material";
+import "./styles/app.css";
+import "@fontsource/poppins";
 
 const theme = createTheme({
 	typography: {
@@ -14,9 +15,12 @@ const theme = createTheme({
 
 const App = () => {
 	return (
-		<ThemeProvider theme={theme}>
-			<Leaderboard />
-		</ThemeProvider>
+		<div className="app">
+			<ThemeProvider theme={theme}>
+				<Navbar />
+				<Leaderboard />
+			</ThemeProvider>
+		</div>
 	);
 };
 

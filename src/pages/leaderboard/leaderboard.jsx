@@ -162,11 +162,11 @@ const Leaderboard = () => {
 						sx={{
 							minWidth: 650,
 							borderRadius: 50,
-							border: `3px solid black`,
+							border: `2px solid #0288d1`,
 						}}
 					>
 						<TableHead>
-							<TableRow sx={{ borderBottom: `3px solid black` }}>
+							<TableRow >
 								<TableCell sx={{ fontSize: `24px` }}>
 									Rank
 								</TableCell>
@@ -188,7 +188,6 @@ const Leaderboard = () => {
 							{rows.map((row) => (
 								<TableRow
 									sx={{
-										borderBottom: `2px solid black`,
 										bgcolor:
 											row.ranking === 1
 												? "#d4af37"
