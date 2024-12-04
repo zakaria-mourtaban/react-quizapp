@@ -27,16 +27,32 @@ const Quiz = ({ questions }) => {
 				textAlign: "center",
 				maxWidth: "600px",
 				marginTop: "15%",
+				boxShadow: "0px 0px 50px 10px rgba(0, 0, 0, 0.75)",
+				height: "auto",
 			}}
 		>
 			<Paper
 				elevation={3}
-				sx={{ padding: "20px", backgroundColor: "#ffffff", borderRadius: "8px" }}
+				sx={{
+					padding: "20px",
+					backgroundColor: "#ffffff",
+					borderRadius: "8px",
+					minHeight: "300px",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-between",
+				}}
 			>
-				<Typography variant="h5" sx={{ marginBottom: "20px", fontWeight: "bold" }}>
+				<Typography
+					variant="h5"
+					sx={{ marginBottom: "20px", fontWeight: "bold", wordWrap: "break-word" }}
+				>
 					Question {currentQuestion + 1} of {questions.length}
 				</Typography>
-				<Typography variant="h6" sx={{ marginBottom: "20px" }}>
+				<Typography
+					variant="h6"
+					sx={{ marginBottom: "20px", wordWrap: "break-word" }}
+				>
 					{questions[currentQuestion].question}
 				</Typography>
 				<Box>
@@ -51,6 +67,10 @@ const Quiz = ({ questions }) => {
 								textTransform: "none",
 								backgroundColor: selectedOption === option ? "primary.main" : "#ffffff",
 								color: selectedOption === option ? "#ffffff" : "primary.main",
+								":hover": {
+									backgroundColor: "primary.light",
+								},
+								wordWrap: "break-word",
 							}}
 							onClick={() => handleOptionClick(option)}
 						>
