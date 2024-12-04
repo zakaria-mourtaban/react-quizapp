@@ -14,12 +14,23 @@ const theme = createTheme({
 	},
 });
 
+const sampleQuestions = [
+	{
+	  question: "What is the capital of France?",
+	  options: ["Berlin", "Madrid", "Paris", "Rome"],
+	},
+	{
+	  question: "What is 2 + 2?",
+	  options: ["3", "4", "5", "6"],
+	},
+  ];
+
 const App = () => {
 	return (
 		<div className="app">
 			<ThemeProvider theme={theme}>
 				<Navbar />
-				<Quiz />
+				<Quiz questions={sampleQuestions} />
 			</ThemeProvider>
 		</div>
 	);
