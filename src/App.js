@@ -6,6 +6,7 @@ import Leaderboard from "./pages/leaderboard/leaderboard.jsx";
 import { createTheme, ThemeProvider } from "@mui/material";
 import "./styles/app.css";
 import "@fontsource/poppins";
+import Quiz from "./pages/quiz/quiz.jsx";
 
 const theme = createTheme({
 	typography: {
@@ -18,7 +19,7 @@ const App = () => {
 		<div className="app">
 			<ThemeProvider theme={theme}>
 				<Navbar />
-				<Leaderboard />
+				<Quiz />
 			</ThemeProvider>
 		</div>
 	);
