@@ -1,0 +1,13 @@
+.Container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.login {
+	width: 20vw;
+	background-color: rgb(180, 190, 251);
+	padding: 50px;
+	border-radius: 10px;
+}
