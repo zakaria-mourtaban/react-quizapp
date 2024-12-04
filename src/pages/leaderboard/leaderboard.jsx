@@ -7,6 +7,7 @@ import {
 	TableCell,
 	TableBody,
 	Paper,
+	AppBar,
 } from "@mui/material";
 import React from "react";
 import "./leaderboard.css";
@@ -154,7 +155,7 @@ const rows = [
 const Leaderboard = () => {
 	return (
 		<div className="main">
-
+			
 			<Container>
 				<TableContainer component={Paper}>
 					<Table
